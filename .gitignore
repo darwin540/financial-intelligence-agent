@@ -1,0 +1,50 @@
+# Build
+target/
+**/target/
+dist/
+node_modules/
+.frontend-dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets and local config (never commit)
+.env
+*.env
+secrets.env
+application-local.yml
+application-local.properties
+*.key
+*.pem
+**/secrets/
+
+# Local encrypted document store (outside repo by default; also ignore if created here)
+documentos-locales/
+.finanzas/
+
+# Database dumps
+*.sql.gz
+*.dump
+pgdata/
+backups/
+
+# Logs
+*.log
+logs/
+
+# Uploaded / real extracts must never enter git
+*.pdf
+*.png
+*.jpg
+*.jpeg
+!docs/**/*.png
+
+# Keep synthetic CSV fixtures under src/test/resources
+!**/src/test/resources/**/*.csv

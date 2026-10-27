@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Intelligence Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="atmosphere"></div>
+  <header class="top">
+    <p class="brand">Financial Intelligence Agent</p>
+    <p class="user">Darwin Mora · local</p>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Tu plan con cifras trazables</h1>
+      <p class="lead">Carga extractos sintéticos, confirma montos y compara estrategias. Sin pagos reales ni bancos.</p>
+      <div class="cta">
+        <button id="btnSesion" type="button">Abrir sesión local</button>
+        <label class="file">
+          Cargar CSV
+          <input id="archivo" type="file" accept=".csv,text/csv" hidden />
+        </label>
+      </div>
+    </section>
+
+    <section class="panel" id="panelEstado">
+      <h2>Estado</h2>
+      <p id="salud">Comprobando…</p>
+      <p id="config"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Revisión</h2>
+      <ul id="revisiones"></ul>
+      <button id="btnConfirmarTodo" type="button" disabled>Confirmar pendientes</button>
+    </section>
+
+    <section class="panel">
+      <h2>Flujo y estrategias</h2>
+      <button id="btnFlujo" type="button">Calcular flujo COP (demo)</button>
+      <button id="btnEst" type="button">Comparar estrategias EST-01</button>
+      <pre id="salida"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Reporte</h2>
+      <button id="btnReporte" type="button">Ver reporte ejecutivo</button>
+      <pre id="reporte"></pre>
+    </section>
+  </main>
+  <footer>
+    <p>MVP fase 1 · COP/USD por moneda · FX solo puntual · IA desactivada · No ejecuta dinero</p>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

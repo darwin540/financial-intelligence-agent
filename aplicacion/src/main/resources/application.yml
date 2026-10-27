@@ -1,0 +1,40 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+
+spring:
+  application:
+    name: financial-intelligence-agent
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/finanzas
+    username: finanzas
+    password: ${FINANZAS_DB_PASSWORD:finanzas_dev}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: America/Bogota
+  main:
+    allow-bean-definition-overriding: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+finanzas:
+  almacen-documentos: ${FINANZAS_ALMACEN:${user.home}/.finanzas/documentos}
+  clave-cifrado-path: ${FINANZAS_CLAVE_PATH:${user.home}/.finanzas/secrets/document.key}
+  usuario-local-nombre: darwin
+  usuario-local-secreto: ${FINANZAS_SECRETO:cambiar-en-local}
+  llm-habilitado: false
+
+logging:
+  level:
+    root: INFO
+    com.finanzas: INFO
